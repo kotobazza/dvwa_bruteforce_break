@@ -49,7 +49,7 @@ func parallelBruteforceByGenerator(alphabet string, resourceURL string, cookieVa
 	}
 }
 
-func parallelBruteforceByList(alphabet string, resourceURL string, cookieValue string, usernames []string, passwords []string, wg *sync.WaitGroup, sem chan struct{}) {
+func parallelBruteforceByList(resourceURL string, cookieValue string, usernames []string, passwords []string, wg *sync.WaitGroup, sem chan struct{}) {
 	for _, s1 := range usernames {
 		for _, s2 := range passwords {
 			time.Sleep(100 * time.Microsecond)
@@ -128,7 +128,7 @@ func main() {
 		panic(err)
 	}
 
-	parallelBruteforceByList("abcdefghijklmnopqrstuvwxyz", taskResourceURL, cookieValue, usernames, passwords, &wg, sem)
+	parallelBruteforceByList(taskResourceURL, cookieValue, usernames, passwords, &wg, sem)
 
 	wg.Wait()
 }
