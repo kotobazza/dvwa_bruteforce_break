@@ -1,5 +1,5 @@
-# Практическая работа 3
-Программа для параллельного перебора пароля на странице DVWA/Brute Force. 
+# DVWA-BRUTE-FORCE
+Программа для параллельного перебора пароля на странице [DVWA/Brute Force](https://github.com/digininja/DVWA). 
 Запуск: 
 ```bash
 go run main.go --ip <IP адрес DVWM> --user <username> --pass <password>
